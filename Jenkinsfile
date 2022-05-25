@@ -22,10 +22,6 @@ pipeline{
 
     stage('Trivy Remote Scan') {
       
-      environment{
-        CYPRESS_CACHE_FOLDER = "$WORKSPACE/cypress-cache-override-folder"
-      }
-      
       steps {
         container("trivy-container"){
           // we use trivy to scan the image on hub.docker.com
